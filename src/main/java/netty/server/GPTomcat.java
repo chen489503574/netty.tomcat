@@ -57,7 +57,7 @@ public class GPTomcat {
                     //配置信息
                     .option(ChannelOption.SO_BACKLOG,128)//针对主线程的配置，线程最多的个数
                     .childOption(ChannelOption.SO_KEEPALIVE,true);//针对子线程的配置，保持长连接
-            //让其  阻塞
+            //让其  阻塞，等待请求
             ChannelFuture f = server.bind(port).sync();
 
             System.out.println("GPTomcat已启动"+port);
